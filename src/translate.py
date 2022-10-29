@@ -1,15 +1,13 @@
 import requests
 import config
 
-if __name__ == "__main__":
+def translate(text, direction='ru'):
     IAM_TOKEN = config.translate_token
     folder_id = config.folder_id
-    target_language = 'ru'
-    texts = ["Hello", "World"]
-
+    target_language = direction
     body = {
         "targetLanguageCode": target_language,
-        "texts": texts,
+        "texts": text,
         "folderId": folder_id,
     }
 
@@ -22,5 +20,15 @@ if __name__ == "__main__":
                             json=body,
                             headers=headers
                             )
+    
+    result_array = response.json().get("translations", []) 
+    if len(result_array) > 0:
+        return result_array[0].get("text", "")
 
-    print(response.text)
+
+
+if __name__ == "__main__":
+    res = translate("Hello world")
+    print(res)
+    res = translate("hello world", 'zh')
+    print(res)
