@@ -1,0 +1,2 @@
+translate_token = "t1.9euelZrIkJ6ajZOWkc-JycecyMrGmO3rnpWakMyRjJXPj8rLkIyYlZqVj5Hl8_cQUQxl-e89A2Q5_d3z91B_CWX57z0DZDn9zef1656VmpWVy5jGj8-Xlo-XxpGPj8-b7_0.b-j-ifqVT1LmokvJl2nV4DbUwt48zGbqpO0YjZpPG89dywixn3P8UzCtsDB7b4o3y_Rcu2g9A-CvA4PbZ0ReCA"
+folder_id = "b1gjnr8518likfp9t4ee"
