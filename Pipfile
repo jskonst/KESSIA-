@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 requests = "*"
+pyaudio = "*"
+webrtcvad = "*"
+halo = "*"
+scipy = "*"
 
 [dev-packages]
 mypy = "*"

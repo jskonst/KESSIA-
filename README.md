@@ -52,3 +52,11 @@ pipenv run test
 pipenv run lint
 pipenv run lintMyPy
 ```
+
+Для работы необходимо скачать файлы с обученной моделью deepspeech и положить их в каталог models
+
+Для запуска следует выполнить следующую команду
+```
+python mic_vad_streaming.py -m ../models/deepspeech-0.9.3-models.pbmm -s ../models/deepspeech-0.9.3-models.scorer
+```
+
