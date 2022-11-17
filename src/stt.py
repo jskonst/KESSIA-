@@ -24,4 +24,5 @@ with requests.post(url, data=data, headers=headers, stream=True) as resp:
     if resp.status_code != 200:
         raise RuntimeError("Invalid response received: code: %d, message: %s" % (resp.status_code, resp.text))
     print(resp.json())
+    print(resp.json().get("result", ""))
 
