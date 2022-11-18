@@ -184,21 +184,22 @@ def main(ARGS):
                 vad_audio.write_wav(os.path.join(ARGS.savewav,"test.wav"), wav_data)
                 res = stt(wav_data)
                 print(res)
-                res = translate(res, "en")
-                print(res)
-                # TODO выделить в отдельную функцию
-                p = pyaudio.PyAudio()
-                stream = p.open(format=pyaudio.paInt16,
-                channels=1,
-                rate=8000,
-                output=True)
-                for audio_content in synthesize(config.folder_id, config.voice_token, res):
-                    stream.write(audio_content)
-                stream.stop_stream()
-                stream.close()
-                p.terminate()
-                wav_data = bytearray()
-                
+                if res:
+                    res = translate(res, "en")
+                    print(res)
+                    # TODO выделить в отдельную функцию
+                    p = pyaudio.PyAudio()
+                    stream = p.open(format=pyaudio.paInt16,
+                    channels=1,
+                    rate=8000,
+                    output=True)
+                    for audio_content in synthesize(config.folder_id, config.voice_token, res):
+                        stream.write(audio_content)
+                    stream.stop_stream()
+                    stream.close()
+                    p.terminate()
+                    wav_data = bytearray()
+                    
 
 if __name__ == '__main__':
     DEFAULT_SAMPLE_RATE = 16000
