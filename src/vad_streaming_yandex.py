@@ -1,7 +1,6 @@
 import time, logging
 from datetime import datetime
 import threading, collections, queue, os, os.path
-import deepspeech
 import numpy as np
 import pyaudio
 import wave
@@ -185,6 +184,8 @@ def main(ARGS):
                 res = stt(wav_data)
                 print(res)
                 if res:
+                    tmp = translate(res, "zh")
+                    print(f"Chinese: {tmp}")
                     res = translate(res, "en")
                     print(res)
                     # TODO выделить в отдельную функцию
